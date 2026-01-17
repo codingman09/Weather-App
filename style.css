@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Black background glow */
+.neon-bg {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #111 0%, #000 70%);
+    z-index: -2;
+}
+
+/* Weather Card */
+.weather-card {
+    width: 360px;
+    padding: 25px;
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    position: relative;
+}
+
+/* 🔥 NEON COLOR CYCLING */
+.neon-animate {
+    animation: neonCycle 12s infinite linear;
+}
+
+@keyframes neonCycle {
+    0%   { box-shadow: 0 0 40px #a855f7; }
+    15%  { box-shadow: 0 0 40px #fde047; }
+    30%  { box-shadow: 0 0 40px #22c55e; }
+    45%  { box-shadow: 0 0 40px #ef4444; }
+    60%  { box-shadow: 0 0 40px #3b82f6; }
+    75%  { box-shadow: 0 0 40px #fb923c; }
+    90%  { box-shadow: 0 0 40px #ec4899; }
+    100% { box-shadow: 0 0 40px #a855f7; }
+}
+
+/* Search */
+.search {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.search input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: white;
+}
+
+.search button {
+    margin-left: 10px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Main weather */
+#city {
+    font-size: 26px;
+}
+
+#icon {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+#temp {
+    font-size: 46px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.stats div {
+    background: #111;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+.stats span {
+    display: block;
+    font-size: 18px;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.forecast div {
+    font-size: 13px;
+}
